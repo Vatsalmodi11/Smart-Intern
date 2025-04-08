@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import {  UserCircle, LogIn } from 'lucide-react';
-import logo from "../images/logo2.webp";
+import logo from "../images/logo.webp";
 
 const Navbar = () => {
   return (
@@ -9,10 +9,10 @@ const Navbar = () => {
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link to="/" className="flex items-center">
-              <img src={logo} alt="Smart Interns Logo" className="h-12 w-12 text-xl " />
+              <img src={logo} alt="Smart Interns Logo" className="h-18 w-24 text-xl " />
               {/* <span className="ml-2 text-xl font-bold text-gray-900">Smart Intern</span> */}
             </Link>
-            <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
+            <div className="hidden sm:ml-6 sm:flex sm:space-x-8"> 
               <Link to="/jobs" className="text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">
                 Find Jobs
               </Link>

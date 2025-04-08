@@ -85,68 +85,8 @@ const HomePage = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 antialiased">
-      {/* Hero Section */}
-      {/* <div className="relative w-full bg-white overflow-hidden pt-10">
-        <div className="relative min-h-screen flex items-center justify-between px-10">
-          //  Left Content 
-          <div className="w-1/2 z-10">
-            <div
-              className={`transform transition-all duration-1000 ${
-                isVisible ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'
-              }`}
-            >
-              <div className="inline-block bg-blue-100 text-blue-600 px-4 py-2 rounded-full text-sm font-medium mb-6">
-                #1 Internship Platform in 2025
-              </div>
-              <h1 className="text-6xl font-bold text-gray-900 leading-tight mb-6">
-                Launch Your Career with Smart Internships
-              </h1>
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Connect with Fortune 500 companies, gain real-world experience, and build your professional network.
-              </p>
-              <div className="flex gap-4 mb-12">
-                <button className="bg-blue-600 text-white px-8 py-4 text-lg font-semibold rounded-lg hover:bg-blue-700 transition-all">
-                  Get Started Now
-                </button>
-                <button className="border-2 border-gray-300 text-gray-700 px-8 py-4 text-lg font-semibold rounded-lg hover:border-blue-600 hover:text-blue-600 transition-all">
-                  Watch Demo
-                </button>
-              </div>
-            </div>
-          </div>
-          {/* Right Image }
-          <div className="w-1/2 h-full">
-            <img
-              src="https://public.readdy.ai/ai/img_res/8f7c611962618c4cb6094d0763c4fd0f.jpg"
-              alt="Smart Internship Platform"
-              className="w-full h-screen object-cover"
-            />
-          </div>
-          // {/* Stats 
-          <div className="absolute bottom-10 left-10 flex gap-6 z-10">
-            <div className="bg-white rounded-xl shadow-lg p-6 w-48">
-              <div className="text-4xl font-bold text-blue-600 mb-2">5,000+</div>
-              <div className="text-gray-600">Active Interns</div>
-            </div>
-            <div className="bg-white rounded-xl shadow-lg p-6 w-48">
-              <div className="text-4xl font-bold text-blue-600 mb-2">500+</div>
-              <div className="text-gray-600">Partner Companies</div>
-            </div>
-            <div className="bg-white rounded-xl shadow-lg p-6 w-48">
-              <div className="text-4xl font-bold text-blue-600 mb-2">95%</div>
-              <div className="text-gray-600">Success Rate</div>
-            </div>
-          </div>
-          // {/* Clock *
-          <div className="fixed top-32 right-8 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-full px-6 py-3 z-20 text-sm tracking-wider shadow-lg backdrop-blur-sm">
-            <i className="far fa-clock mr-2"></i>
-            {currentTime.toLocaleTimeString()}
-          </div>
-        </div>
-      </div> */}
-
-
-      <div className="relative w-full bg-white overflow-hidden pt-10">
+      {/* Hero Section */}  
+    <div className="relative w-full bg-white overflow-hidden pt-10">
         <div className="relative min-h-screen flex items-center justify-between px-10">
           {/* Left Content */}
           <div className="w-1/2 z-10">
@@ -166,9 +106,6 @@ const HomePage = () => {
               <div className="flex gap-4 mb-12">
                 <button className="bg-blue-600 text-white px-8 py-4 text-lg font-semibold rounded-lg hover:bg-blue-700 transition-all">
                   Get Started Now
-                </button>
-                <button className="border-2 border-gray-300 text-gray-700 px-8 py-4 text-lg font-semibold rounded-lg hover:border-blue-600 hover:text-blue-600 transition-all">
-                  Watch Demo
                 </button>
               </div>
             </div>
@@ -217,7 +154,7 @@ const HomePage = () => {
             spaceBetween={30}
             slidesPerView={5}
             loop={true}
-            autoplay={{ delay: 2000, disableOnInteraction: false }}
+            autoplay={{ delay: 1500, disableOnInteraction: false }}
             breakpoints={{
               320: { slidesPerView: 1 },
               640: { slidesPerView: 2 },
@@ -379,3 +316,5 @@ const HomePage = () => {
 };
 
 export default HomePage;
+
+

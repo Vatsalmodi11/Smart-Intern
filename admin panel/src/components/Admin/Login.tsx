@@ -7,15 +7,11 @@ const AdminLogin: React.FC = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
-  // Dummy login credentials for demo (replace with actual authentication logic)
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
-
-    // Simple validation (replace with API call in production)
     if (username === 'admin' && password === 'admin123') {
-      // Simulate successful login
-      localStorage.setItem('isAuthenticated', 'true'); // Optional: for persistence
+      localStorage.setItem('isAuthenticated', 'true');
       navigate('/dashboard');
     } else {
       setError('Invalid username or password');
@@ -23,19 +19,26 @@ const AdminLogin: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-      <div className="bg-white rounded-lg shadow-xl p-8 w-full max-w-md">
-        <div className="flex justify-center mb-6">
-          <div className="w-12 h-12 bg-teal-500 rounded-md flex items-center justify-center">
+    <div 
+      className="min-h-screen flex items-center justify-center p-4 bg-cover bg-center"
+      style={{
+        backgroundImage: `url('')`,
+        backgroundBlendMode: 'overlay',
+        backgroundColor: 'rgba(0, 0, 0, 0.4)' // Adds a dark overlay for better text readability
+      }}
+    >
+      <div className="bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl p-8 w-full max-w-md border border-gray-200/50">
+        <div className="flex justify-center mb-8">
+          <div className="w-16 h-16 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-full flex items-center justify-center shadow-lg">
             <i className="fas fa-briefcase text-white text-2xl"></i>
           </div>
         </div>
-        <h2 className="text-2xl font-bold text-center text-gray-800 mb-2">Admin Login</h2>
-        <p className="text-center text-gray-500 mb-8">Welcome to WorkFlow</p>
+        <h2 className="text-3xl font-bold text-center text-gray-900 mb-2">Admin Portal</h2>
+        <p className="text-center text-gray-600 mb-8">Secure access to WorkFlow</p>
 
         <form onSubmit={handleLogin} className="space-y-6">
-          <div>
-            <label htmlFor="username" className="block text-sm font-medium text-gray-700 mb-1">
+          <div className="space-y-2">
+            <label htmlFor="username" className="block text-sm font-medium text-gray-700">
               Username
             </label>
             <div className="relative">
@@ -44,15 +47,15 @@ const AdminLogin: React.FC = () => {
                 id="username"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
-                className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-500 text-gray-800"
+                className="w-full px-4 py-3 pl-10 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-teal-500 bg-gray-50 text-gray-800 transition-all duration-200 hover:border-gray-300"
                 placeholder="Enter username"
               />
-              <i className="fas fa-user absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+              <i className="fas fa-user absolute left-3 top-1/2 -translate-y-1/2 text-gray-500"></i>
             </div>
           </div>
 
-          <div>
-            <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">
+          <div className="space-y-2">
+            <label htmlFor="password" className="block text-sm font-medium text-gray-700">
               Password
             </label>
             <div className="relative">
@@ -61,28 +64,33 @@ const AdminLogin: React.FC = () => {
                 id="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-500 text-gray-800"
+                className="w-full px-4 py-3 pl-10 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-teal-500 bg-gray-50 text-gray-800 transition-all duration-200 hover:border-gray-300"
                 placeholder="Enter password"
               />
-              <i className="fas fa-lock absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+              <i className="fas fa-lock absolute left-3 top-1/2 -translate-y-1/2 text-gray-500"></i>
             </div>
           </div>
 
           {error && (
-            <div className="text-red-500 text-sm text-center">{error}</div>
+            <div className="text-red-500 text-sm text-center bg-red-50 p-2 rounded-lg">
+              {error}
+            </div>
           )}
 
           <button
             type="submit"
-            className="w-full bg-teal-500 text-white py-2 rounded-md hover:bg-teal-600 transition-colors flex items-center justify-center"
+            className="w-full bg-gradient-to-r from-teal-500 to-cyan-500 text-white py-3 rounded-lg hover:from-teal-600 hover:to-cyan-600 transition-all duration-300 flex items-center justify-center shadow-md hover:shadow-lg"
           >
             <i className="fas fa-sign-in-alt mr-2"></i>
-            Login
+            Sign In
           </button>
         </form>
 
-        <p className="text-center text-gray-500 text-sm mt-6">
-          Forgot password? <a href="#" className="text-teal-500 hover:underline">Reset here</a>
+        <p className="text-center text-gray-600 text-sm mt-6">
+          Forgot password?{' '}
+          <a href="#" className="text-teal-500 hover:text-teal-600 transition-colors">
+            Reset here
+          </a>
         </p>
       </div>
     </div>
