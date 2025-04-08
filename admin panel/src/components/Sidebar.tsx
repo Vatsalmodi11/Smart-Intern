@@ -28,8 +28,8 @@ const Sidebar: React.FC<SidebarProps> = ({
   ];
 
   const profileMenuItems = [
-    { icon: 'user', text: 'Profile', path: '/profile' },
-    { icon: 'cog', text: 'Settings', path: '/settings' },
+    // { icon: 'user', text: 'Profile', path: '/profile' },
+    // { icon: 'cog', text: 'Settings', path: '/settings' },
     { icon: 'sign-out-alt', text: 'Logout', path: '/login', onClick: () => handleLogout() },
   ];
 

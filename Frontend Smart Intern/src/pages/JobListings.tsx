@@ -130,7 +130,7 @@ const JobListings = () => {
               className="w-full pl-10 pr-4 py-3 rounded-md bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-500 text-gray-800 placeholder-gray-400 shadow-sm transition-all duration-300 hover:border-gray-400"
             />
           </div>
-          <button className="flex items-center gap-2 px-5 py-3 bg-gray-600 text-white rounded-md hover:bg-gray-700 transition-all duration-300 shadow-sm hover:shadow-md">
+          <button className="flex items-center gap-2 px-5 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-all duration-300 shadow-sm hover:shadow-md">
             <SlidersHorizontal className="h-4 w-4" />
             <span className="font-medium">Filters</span>
           </button>
@@ -141,7 +141,7 @@ const JobListings = () => {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
           <div className="lg:col-span-2 space-y-4">
             {loading ? (
-              <p className="text-center text-gray-600 text-lg animate-pulse font-medium">Loading jobs...</p>
+              <p className="text-center text-blue-600 text-lg animate-pulse font-medium">Loading jobs...</p>
             ) : jobListings.length === 0 ? (
               <p className="text-center text-gray-500 text-lg animate-fade-in font-medium">No jobs found</p>
             ) : (
@@ -166,8 +166,8 @@ const JobListings = () => {
                       <h3 className="text-base font-semibold text-gray-900 line-clamp-1 hover:text-gray-700 transition-colors duration-300">
                         {job.title}
                       </h3>
-                      <p className="text-sm text-gray-600 font-medium line-clamp-1">{job.company}</p>
-                      <div className="flex flex-wrap gap-2 mt-1 text-xs text-gray-600">
+                      <p className="text-sm text-blue-600 font-medium line-clamp-1">{job.company}</p>
+                      <div className="flex flex-wrap gap-2 mt-1 text-xs text-blue-600">
                         <span className="flex items-center">
                           <MapPin className="h-3 w-3 mr-1 text-gray-400" />
                           {job.location}
@@ -183,7 +183,7 @@ const JobListings = () => {
                         e.stopPropagation();
                         handleApply(job);
                       }}
-                      className="text-gray-600 font-medium hover:text-gray-800 text-sm px-3 py-1 rounded-md bg-gray-100 hover:bg-gray-200 transition-all duration-300"
+                      className="text-blue-600 font-medium hover:text-gray-800 text-sm px-3 py-1 rounded-md bg-gray-100 hover:bg-gray-200 transition-all duration-300"
                     >
                       Apply
                     </button>
@@ -199,17 +199,17 @@ const JobListings = () => {
                 <div className="flex items-start justify-between border-b border-gray-200 pb-4">
                   <div>
                     <h2 className="text-2xl font-bold text-gray-900">{selectedJob.title}</h2>
-                    <p className="text-gray-600 mt-1 text-base font-medium">{selectedJob.company}</p>
+                    <p className="text-blue-600 mt-1 text-base font-medium">{selectedJob.company}</p>
                   </div>
                   <button
                     onClick={() => handleApply(selectedJob)}
-                    className="bg-gray-600 text-white px-6 py-2 rounded-md hover:bg-gray-700 transition-all duration-300 font-medium"
+                    className="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-all duration-300 font-medium"
                   >
                     Apply Now
                   </button>
                 </div>
 
-                <div className="grid grid-cols-2 gap-4 text-sm text-gray-600">
+                <div className="grid grid-cols-2 gap-4 text-sm text-blue-600">
                   <div>
                     <span className="font-medium text-gray-900">Location:</span>
                     <p>{selectedJob.location}</p>
@@ -280,7 +280,7 @@ const JobListings = () => {
             ) : (
               <div className="flex items-center justify-center h-full animate-fade-in">
                 <div className="text-center">
-                  <p className="text-gray-600 text-lg font-semibold">No Job Selected</p>
+                  <p className="text-blue-600 text-lg font-semibold">No Job Selected</p>
                   <p className="text-gray-400 text-sm mt-1">Click a job to view all details</p>
                 </div>
               </div>

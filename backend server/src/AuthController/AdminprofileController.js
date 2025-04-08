@@ -1,39 +1,44 @@
-import { Request, Response } from 'express';
-import Profile, { IProfile } from '../AuthModel/AdminProfile';
+const Admin = require('../AuthModel/AdminProfile');
+const bcrypt = require('bcryptjs');
 
-export const getProfile = async (req: Request, res: Response) => {
+const adminLogin = async (req, res) => {
+  const { email, password } = req.body;
+
   try {
-    const profile = await Profile.findOne();
-    if (!profile) {
-      const defaultProfile = new Profile({
-        name: '',
-        email: 'default@example.com',
-      });
-      await defaultProfile.save();
-      return res.status(200).json(defaultProfile);
+    // Check if admin exists
+    const admin = await Admin.findOne({ email });
+    if (!admin) {
+      return res.status(400).json({ message: 'Invalid email or password' });
     }
-    res.status(200).json(profile);
+
+    // Verify password
+    const isMatch = await bcrypt.compare(password, admin.password);
+    if (!isMatch) {
+      return res.status(400).json({ message: 'Invalid email or password' });
+    }
+
+    // Store admin info in session
+    req.session.admin = {
+      id: admin._id,
+      email: admin.email,
+    };
+
+    res.status(200).json({ message: 'Login successful', admin: req.session.admin });
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Server error', error });
+    console.error('Admin login error:', error);
+    res.status(500).json({ message: 'Server error' });
   }
 };
 
-export const updateProfile = async (req: Request, res: Response) => {
-  try {
-    const profileData: Partial<IProfile> = req.body;
-    const profile = await Profile.findOneAndUpdate(
-      {},
-      profileData,
-      {
-        new: true,
-        upsert: true,
-        runValidators: true,
-      }
-    );
-    res.status(200).json(profile);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Server error', error });
-  }
+// Optional: Logout function
+const adminLogout = (req, res) => {
+  req.session.destroy((err) => {
+    if (err) {
+      return res.status(500).json({ message: 'Logout failed' });
+    }
+    res.clearCookie('connect.sid'); // Default session cookie name
+    res.status(200).json({ message: 'Logout successful' });
+  });
 };
+
+module.exports = { adminLogin, adminLogout };
