@@ -40,7 +40,7 @@ const Login: React.FC = () => {
       console.log('Login successful, userId:', response.data.userId);
 
       // Redirect to profile or jobs page
-      navigate('/jobs'); // Changed from '/profile' to match your earlier JobListings redirect
+      navigate('/'); // Changed from '/profile' to match your earlier JobListings redirect
     } catch (err: any) {
       const errorMessage = err.response?.data?.message || err.message || 'Login failed';
       setError(errorMessage);
