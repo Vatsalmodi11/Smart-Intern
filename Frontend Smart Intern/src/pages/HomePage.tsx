@@ -320,3 +320,44 @@ const HomePage = () => {
 export default HomePage;
 
 
+
+
+
+{/* <div className="lg:col-span-1">
+<div className="bg-white rounded-2xl shadow-lg p-8 sticky top-8">
+  {profile ? (
+    <>
+      <img
+        src={profile.companyImage ? `${API_BASE_URL}${profile.companyImage}` : 'https://via.placeholder.com/128'}
+        alt="Profile"
+        className="w-36 h-36 rounded-full mx-auto mb-6 border-4 border-blue-100 shadow-md"
+      />
+      <h3 className="text-2xl font-bold text-center text-gray-900 mt-4">{`${profile.firstName} ${profile.lastName}`}</h3>
+      <p className="text-gray-600 text-center mt-2 font-medium">Software Engineer</p>
+      <div className="flex items-center justify-center mt-4 text-gray-500">
+        <MapPin className="h-5 w-5 mr-2" />
+        <span className="text-sm">{profile.location || 'Not specified'}</span>
+      </div>
+    </>
+  ) : (
+    <p className="text-center text-gray-600">Loading profile...</p>
+  )}
+</div>
+</div>
+
+
+
+
+const fetchUserProfile = async () => {
+  try {
+    const response = await fetch(`${API_BASE_URL}/api/auth/user`, {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' },
+    });
+    if (!response.ok) throw new Error(`Failed to fetch user profile: ${response.statusText}`);
+    const data = await response.json();
+    setProfile(data.data || null);
+  } catch (err) {
+    setError((err as Error).message);
+  }
+}; */}
