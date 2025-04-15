@@ -1,3 +1,5 @@
+
+
 const Application = require('../AuthModel/ApplicationModel');
 const Job = require('../AuthModel/JobModel');
 
@@ -7,6 +9,7 @@ exports.createApplication = async (req, res) => {
       userId,
       jobId,
       userName,
+      userEmail, // Added userEmail
       avatar,
       action,
       position,
@@ -17,7 +20,7 @@ exports.createApplication = async (req, res) => {
 
     console.log('Received application data:', req.body);
 
-    if (!userId || !jobId || !userName || !action || !position || !company || !salary) {
+    if (!userId || !jobId || !userName || !userEmail || !action || !position || !company || !salary) {
       return res.status(400).json({ message: 'Missing required fields' });
     }
 
@@ -36,6 +39,7 @@ exports.createApplication = async (req, res) => {
       userId,
       jobId,
       userName,
+      userEmail, // Added userEmail
       avatar,
       action,
       position,

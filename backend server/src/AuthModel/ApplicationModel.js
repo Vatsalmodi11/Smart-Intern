@@ -1,9 +1,11 @@
+
 const mongoose = require('mongoose');
 
 const applicationSchema = new mongoose.Schema({
   userId: { type: String, required: true },
   jobId: { type: String, required: true },
   userName: { type: String, required: true },
+  userEmail: { type: String, required: true }, // Added userEmail field
   avatar: { type: String },
   action: { type: String, required: true },
   position: { type: String, required: true },

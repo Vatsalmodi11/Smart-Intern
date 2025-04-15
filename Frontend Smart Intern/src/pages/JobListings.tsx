@@ -91,6 +91,7 @@ const JobListings = () => {
         userId,
         jobId: job._id,
         userName: user.userType === 'jobseeker' ? `${user.firstName} ${user.lastName}` : user.companyName,
+        userEmail: user.email, // Added userEmail
         avatar: 'https://example.com/default-avatar.jpg',
         action: 'applied for job',
         position: job.title,
