@@ -35,10 +35,11 @@
 
 ## 📂 Project Structure
 
-SMART-INTERN/
-├── admin panel/             # Admin-specific frontend
-├── backend server/          # Node.js + Express + MongoDB backend
-└── Frontend Smart Intern/   # Student-facing React frontend
+| Folder Name              | Description                               |
+|--------------------------|-------------------------------------------|
+| `admin panel/`           | React-based frontend for admin dashboard  |
+| `backend server/`        | Node.js + Express backend with MongoDB    |
+| `Frontend Smart Intern/` | React frontend for student users          |
 
 
 
