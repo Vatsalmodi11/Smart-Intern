@@ -42,16 +42,19 @@
 | `Frontend Smart Intern/` | React frontend for student users          |
 
 
+![image](https://github.com/user-attachments/assets/07936d3c-0550-4553-9dbf-9b40bd729ca7)
 
-![image](https://github.com/user-attachments/assets/7c6b6af3-6c02-41a2-beb2-b1ed525b1c7f)
+![image](https://github.com/user-attachments/assets/5a9a2064-edd7-4889-8775-facff30fe4d3)
 
-![image](https://github.com/user-attachments/assets/b3ce01fe-fa93-4d21-bc93-52fddbb3f0a6)
+![image](https://github.com/user-attachments/assets/6a82b9a0-fa0b-4ce5-818d-99fd8f0b7391)
 
-![image](https://github.com/user-attachments/assets/6a8a5f91-1d7c-491c-9de7-fe417a7a5fd9)
+![image](https://github.com/user-attachments/assets/9b3a043a-9777-4455-8ccc-3b556a229f22)
 
-![image](https://github.com/user-attachments/assets/ec4f2d30-46df-4cd3-a041-73c73c9c5dfe)
+![image](https://github.com/user-attachments/assets/fe36e4af-3088-4a89-a638-93d863e8f080)
 
-![image](https://github.com/user-attachments/assets/fb372026-f410-478d-ac68-eb056ea9d1e9)
+
+
+
 
 
 
